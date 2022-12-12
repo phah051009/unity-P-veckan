@@ -6,6 +6,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] float playerSpeed = 0;
+    
+    float vertical;
 
     Vector2 movement;
     Rigidbody2D rigidbody;
@@ -26,14 +28,12 @@ public class Player : MonoBehaviour
     }
 
     private void PlayerInput()
-    {
-        float vertical = Input.GetAxis("Vertical");
-
-        movement = new Vector2(0f, vertical);
+    {   
+        vertical = Input.GetAxis("Vertical");
     }
 
     private void MovePlayer()
     {
-        rigidbody.velocity = new Vector2(movement * playerSpeed, rigidbody.velocity.y);
+        rigidbody.velocity = new Vector2(0f, vertical * playerSpeed);
     }
 }
