@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        rigidbody.gravityScale = 0;
     }
 
     private void Update()
